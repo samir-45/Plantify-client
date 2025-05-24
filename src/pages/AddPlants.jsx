@@ -1,4 +1,5 @@
 import React from "react";
+import Swal from "sweetalert2";
 
 const AddPlants = () => {
   const handleSubmit = (e) => {
@@ -20,6 +21,15 @@ const AddPlants = () => {
     .then(res => res.json())
     .then(data => {
       console.log(data)
+
+                          Swal.fire({
+                              position: "center",
+                              icon: "success",
+                              title: "Coffee updated successfully",
+                              showConfirmButton: false,
+                              timer: 1500
+                          });
+                          e.target.reset();
     })
   };
 
