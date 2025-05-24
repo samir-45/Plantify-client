@@ -82,7 +82,7 @@ const MyPlants = () => {
             </tr>
           </thead>
 
-          <tbody >
+          <tbody>
             {myPlants.map((plant, index) => (
               <tr key={plant._id}>
 

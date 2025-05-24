@@ -5,7 +5,7 @@ const Services = () => {
 <div className='w-full px-3 py-5'>
             <h2 className='font-bold text-2xl pb-2 text-green-900'>Our Services</h2>
             <span className='px-12 border-t-4 border-green-700'></span>
-            <div className=' grid py-3 grid-cols-3 gap-3'>
+            <div className=' grid py-3 grid-cols-1 md:grid-cols-3 gap-3'>
 
             <div className="card card-side bg-base-100 px-5 py-9 shadow-lg flex justify-around items-center">
                 <div>

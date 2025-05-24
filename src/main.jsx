@@ -40,7 +40,7 @@ const router = createBrowserRouter([
       {
         path: 'updatePlants/:id',
         loader: ({params}) => fetch(`http://localhost:3000/plants/${params.id}`),
-        Component: UpdatePlants
+        element: <UpdatePlants></UpdatePlants>
       },
       {
         path: 'allPlants',
