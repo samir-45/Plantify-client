@@ -1,9 +1,13 @@
-import { useState } from "react";
+import { use, useState } from "react";
 import { Link } from "react-router";
 import Swal from "sweetalert2";
+import { AuthContext } from "../Contexts/AuthContext";
 
 const MyPlants = () => {
-  const userEmail = "mdmahinkhan621@gmail.com"; // ✅ Replace with your actual logged-in user logic
+
+  const {user} = use(AuthContext);
+
+  const userEmail = user?.email;
   const [myPlants, setMyPlants] = useState([]);
 
   if (myPlants.length === 0) {

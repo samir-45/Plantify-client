@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { use } from 'react';
 import { Link, NavLink } from 'react-router';
+import { AuthContext } from '../Contexts/AuthContext';
 
 const NavBar = () => {
 
@@ -9,6 +10,18 @@ const NavBar = () => {
     <NavLink to='/addPlants' className='text-lg text-green-800 font-bold'>Add Plant</NavLink>
     <NavLink to='/myPlants' className='text-lg text-green-800 font-bold'>My Plants</NavLink>
     </>
+
+      const {user, logOut} = use(AuthContext);
+
+        const handleLogout = () => {
+    logOut()
+    .then(() => {
+      console.log('User logged out successfully')
+    })
+    .catch(error => {
+      console.log(error)
+    })
+  }
 
     return (
         <div>
@@ -34,10 +47,20 @@ const NavBar = () => {
   </div>
   <div className="navbar-end space-x-3">
 
-<Link to='' className='btn px-4 py-3 rounded-full hover:bg-green-800 bg-[#234823] trxt-lg font-bold  text-green-300'>Login</Link>
-<Link to='' className='btn px-4 py-3 rounded-full hover:bg-green-800 bg-[#234823] trxt-lg font-bold  text-green-300'>Signup</Link>
+    {
+      user? <Link onClick={handleLogout} to='/auth/signIn' className='btn px-4 py-3 rounded-full hover:bg-green-800 bg-[#234823] trxt-lg font-bold  text-green-300'>Log Out</Link> : <Link to='/auth/signIn' className='btn px-4 py-3 rounded-full hover:bg-green-800 bg-[#234823] trxt-lg font-bold  text-green-300'>Login</Link>
+    }
+
+{/* <Link to='/auth/signIn' className='btn px-4 py-3 rounded-full hover:bg-green-800 bg-[#234823] trxt-lg font-bold  text-green-300'>Login</Link> */}
 
 
+<Link to='/auth/signUp' className='btn px-4 py-3 rounded-full hover:bg-green-800 bg-[#234823] trxt-lg font-bold  text-green-300'>Signup</Link>
+
+<div className="avatar">
+  <div className="w-12 rounded-full">
+    <img src={`${user? user.photoURL : "https://img.daisyui.com/images/profile/demo/yellingcat@192.webp"}`} />
+  </div>
+</div>
 
     <label className="swap swap-rotate">
   {/* this hidden checkbox controls the state */}

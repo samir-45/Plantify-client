@@ -87,7 +87,7 @@ const UpdatePlants = () => {
                             <input defaultValue={name} type="text" name="name" placeholder="User Name" className="input input-bordered w-full" required />
 
                             <button type="submit" className="btn bg-green-600 hover:bg-green-700 text-white w-full mt-4">
-                                Add Plant
+                                Update Plant
                             </button>
                         </form>
                     </div>

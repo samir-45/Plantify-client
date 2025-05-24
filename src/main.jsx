@@ -17,6 +17,8 @@ import Signin from './pages/Signin.jsx';
 import Signup from './pages/Signup.jsx';
 import PlantDetails from './pages/PlantDetails.jsx';
 import AllPlants from './pages/AllPlants.jsx';
+import AuthProvider from './Contexts/AuthProvider.jsx';
+import PrivetRoute from './provider/PrivetRoute.jsx';
 
 const router = createBrowserRouter([
   {
@@ -29,11 +31,11 @@ const router = createBrowserRouter([
       },
       {
         path: 'addPlants',
-        Component: AddPlants
+        element: <PrivetRoute><AddPlants></AddPlants></PrivetRoute>
       },
       {
         path: 'myPlants',
-        Component: MyPlants
+        element: <PrivetRoute><MyPlants></MyPlants></PrivetRoute>
       },
       {
         path: 'updatePlants/:id',
@@ -48,7 +50,7 @@ const router = createBrowserRouter([
       {
         path: 'plantDetails/:id',
         loader: ({params}) => fetch(`http://localhost:3000/plants/${params.id}`),
-        Component: PlantDetails
+        element: <PrivetRoute><PlantDetails></PlantDetails></PrivetRoute>
       }
     ]
   },
@@ -74,6 +76,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-  <RouterProvider router={router} />
+<AuthProvider>
+    <RouterProvider router={router} />
+</AuthProvider>
   </StrictMode>,
 )
