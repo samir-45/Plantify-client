@@ -1,12 +1,20 @@
-# React + Vite
+# 🌿 Plant Care Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The **Plant Care Tracker** is a full-stack web application designed to help users discover, manage, and track their favorite plants. Built as part of an assignment project, the platform allows users to add, update, and delete plant records, along with viewing plant details and filtering based on user email.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🔐 User authentication via Firebase (Email & Google Sign-in)
+- 🪴 Add new plants with image, description, and care level
+- 🧾 View list of plants added by the logged-in user
+- ✏️ Edit or delete plant entries
+- 📄 View individual plant details
+- 🌍 Responsive UI with Tailwind CSS & Daisy UI
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Frontend**: React, Tailwind CSS, Daisy UI, React Router
+- **Backend**: Express.js, Node.js, MongoDB
+- **Authentication**: Firebase Authentication
+- **Hosting**:  Vercel, Netlify 
+

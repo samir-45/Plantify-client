@@ -4,8 +4,10 @@ import { Link, useLoaderData } from 'react-router';
 const AllPlants = () => {
 
     const initialPlants = useLoaderData()
+    // console.log(initialPlants)
 
     const [plants, setPlants] = useState(initialPlants);
+    // console.log(plants)
 
     return (
         <div>
