@@ -1,7 +1,8 @@
-import React, { use } from 'react';
+import React, { use, useState } from 'react';
 import { AuthContext } from '../Contexts/AuthContext';
 import { useNavigate } from 'react-router';
 import Swal from 'sweetalert2';
+import { FiEye, FiEyeOff } from 'react-icons/fi';
 
 const Signup = () => {
 
@@ -23,7 +24,7 @@ const Signup = () => {
 
         updateUser({ displayName: name, photoURL: url })
           .then(() => {
-                Swal.fire({
+            Swal.fire({
               position: "center",
               icon: "success",
               title: "Registered Successful",
@@ -48,7 +49,7 @@ const Signup = () => {
     GoogleSignIn()
       .then(result => {
         // console.log(result.user)
-            Swal.fire({
+        Swal.fire({
           position: "center",
           icon: "success",
           title: "Registered Successful",
@@ -62,6 +63,8 @@ const Signup = () => {
         console.log(error)
       })
   }
+
+  const [showPassword, setShowPassword] = useState(true);
 
   return (
     <div>
@@ -88,7 +91,7 @@ const Signup = () => {
                   {/* Password */}
                   <label className="input validator">
                     <input
-                      type="password"
+                      type={showPassword ? "password" : "text"}
                       required
                       name='password'
                       placeholder="Password"
@@ -96,6 +99,13 @@ const Signup = () => {
                       pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                       title="Must be more than 8 characters, including number, lowercase letter, uppercase letter"
                     />
+                    {/* Show/Hide Icon */}
+                    <span
+                      className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 cursor-pointer"
+                      onClick={() => setShowPassword(!showPassword)}
+                    >
+                      {showPassword ? <FiEyeOff size={20} /> : <FiEye size={20} />}
+                    </span>
                   </label>
 
                   <div><a className="link link-hover">Forgot password?</a></div>
