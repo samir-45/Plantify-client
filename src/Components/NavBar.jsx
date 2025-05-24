@@ -5,9 +5,9 @@ const NavBar = () => {
 
     const navLink = <>
     <NavLink to='/' className='text-lg text-green-800 font-bold'>Home</NavLink>
-    <NavLink to='/' className='text-lg text-green-800 font-bold'>All Plants</NavLink>
+    <NavLink to='/allPlants' className='text-lg text-green-800 font-bold'>All Plants</NavLink>
     <NavLink to='/addPlants' className='text-lg text-green-800 font-bold'>Add Plant</NavLink>
-    <NavLink to='/' className='text-lg text-green-800 font-bold'>My Plants</NavLink>
+    <NavLink to='/myPlants' className='text-lg text-green-800 font-bold'>My Plants</NavLink>
     </>
 
     return (

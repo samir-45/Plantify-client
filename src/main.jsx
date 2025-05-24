@@ -16,6 +16,7 @@ import UpdatePlants from './pages/UpdatePlants.jsx';
 import Signin from './pages/Signin.jsx';
 import Signup from './pages/Signup.jsx';
 import PlantDetails from './pages/PlantDetails.jsx';
+import AllPlants from './pages/AllPlants.jsx';
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,11 @@ const router = createBrowserRouter([
       {
         path: 'updatePlants',
         Component: UpdatePlants
+      },
+      {
+        path: 'allPlants',
+        loader: () => fetch('http://localhost:3000/plants'),
+        Component: AllPlants
       },
       {
         path: 'plantDetails/:id',
