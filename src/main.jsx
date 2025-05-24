@@ -39,17 +39,17 @@ const router = createBrowserRouter([
       },
       {
         path: 'updatePlants/:id',
-        loader: ({params}) => fetch(`https://plant-care-server-sigma.vercel.app/plants/${params.id}`),
+        loader: ({params}) => fetch(`https://plant-care-server-mauve.vercel.app/plants/${params.id}`),
         element: <UpdatePlants></UpdatePlants>
       },
       {
         path: 'allPlants',
-        loader: () => fetch('https://plant-care-server-sigma.vercel.app/plants'),
+        loader: () => fetch('https://plant-care-server-mauve.vercel.app/plants'),
         Component: AllPlants
       },
       {
         path: 'plantDetails/:id',
-        loader: ({params}) => fetch(`https://plant-care-server-sigma.vercel.app/plants/${params.id}`),
+        loader: ({params}) => fetch(`https://plant-care-server-mauve.vercel.app/plants/${params.id}`),
         element: <PrivetRoute><PlantDetails></PlantDetails></PrivetRoute>
       }
     ]

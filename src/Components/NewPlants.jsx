@@ -7,7 +7,7 @@ const NewPlants = () => {
   if (newPlants.length === 0) {
     (async () => {
       try {
-        const res = await fetch("https://plant-care-server-sigma.vercel.app/plants");
+        const res = await fetch("https://plant-care-server-mauve.vercel.app/plants");
         const data = await res.json();
 
         const today = new Date();
