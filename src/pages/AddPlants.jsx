@@ -54,10 +54,18 @@ const AddPlants = () => {
         </select>
         
         <input type="text" name="wateringFrequency" placeholder="Watering Frequency (e.g. every 3 days)" className="input input-bordered w-full" required />
-        
+                  <label className="label">
+            <span className="label-text">Last Watered Date </span>
+          </label> <br />
         <input type="date" name="lastWateredDate" placeholder="Last Watered Date" className="input input-bordered w-full" required />
-        
+                          <label className="label">
+            <span className="label-text">Next Watering Date</span>
+          </label> <br />
         <input type="date" name="nextWateringDate" placeholder="Next Watering Date" className="input input-bordered w-full" required />
+                          <label className="label">
+            <span className="label-text">Todays Date</span>
+          </label> <br />
+        <input type="date" name="plantAddedDate" placeholder="Todays Date" className="input input-bordered w-full" required />
         
         <input type="text" name="health" placeholder="Health Status" className="input input-bordered w-full" required />
         

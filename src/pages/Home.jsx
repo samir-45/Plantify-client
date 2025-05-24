@@ -1,6 +1,7 @@
 import React from 'react';
 import PaginationSwiper from '../Components/PaginationSwiper';
 import Services from '../Components/Services';
+import NewPlants from '../Components/NewPlants';
 
 const Home = () => {
     return (
@@ -10,6 +11,11 @@ const Home = () => {
             </div>
             <div>
                 <Services></Services>
+            </div>
+            <div>
+            
+                    <NewPlants></NewPlants>
+               
             </div>
         </div>
     );
