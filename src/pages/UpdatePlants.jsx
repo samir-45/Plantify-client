@@ -15,7 +15,7 @@ const UpdatePlants = () => {
         console.log(updatedPlant);
 
         // NOw update data to the database
-        fetch(`http://localhost:3000/plants/${_id}`, {
+        fetch(`https://plant-care-server-sigma.vercel.app/plants/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

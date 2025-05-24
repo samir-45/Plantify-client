@@ -13,7 +13,7 @@ const MyPlants = () => {
   if (myPlants.length === 0) {
     (async () => {
       try {
-        const res = await fetch("http://localhost:3000/plants");
+        const res = await fetch("https://plant-care-server-sigma.vercel.app/plants");
         const data = await res.json();
         const userPlants = data.filter((plant) => plant.email === userEmail);
         setMyPlants(userPlants);
@@ -39,7 +39,7 @@ const MyPlants = () => {
     }).then((result) => {
       if (result.isConfirmed) {
 
-        fetch(`http://localhost:3000/plants/${id}`, {
+        fetch(`https://plant-care-server-sigma.vercel.app/plants/${id}`, {
           method: 'DELETE'
         })
           .then(res => res.json())
