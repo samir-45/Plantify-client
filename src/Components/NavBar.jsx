@@ -11,6 +11,7 @@ const {user, logOut} = use(AuthContext);
     <NavLink to='/allPlants' className='text-lg text-green-800 font-bold'>All Plant</NavLink>
     <NavLink to='/addPlants' className='text-lg text-green-800 font-bold'>Add Plant</NavLink>
     <NavLink to='/myPlants' className='text-lg text-green-800 font-bold'>My Plants</NavLink>
+    <NavLink to='/aboutUs' className='text-lg text-green-800 font-bold'>About Us</NavLink>
 
     {
       user && <NavLink to='/dashboard' className='text-lg text-green-800 font-bold'>Dashboard</NavLink>
@@ -74,7 +75,7 @@ const {user, logOut} = use(AuthContext);
 
     <label className="swap swap-rotate">
   {/* this hidden checkbox controls the state */}
-  <input type="checkbox" className="theme-controller" value="synthwave" />
+  <input type="checkbox" className="theme-controller" value="retro" />
 
   {/* sun icon */}
   <svg

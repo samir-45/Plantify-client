@@ -21,6 +21,7 @@ import AuthProvider from './Contexts/AuthProvider.jsx';
 import PrivetRoute from './provider/PrivetRoute.jsx';
 import Dashboard from './pages/dashboard/Dashboard.jsx';
 import DashboardLayout from './pages/dashboard/DashboardLayout.jsx';
+import AboutUs from './pages/AboutUs.jsx';
 
 const router = createBrowserRouter([
   {
@@ -54,10 +55,10 @@ const router = createBrowserRouter([
         loader: ({params}) => fetch(`http://localhost:3000/plants/${params.id}`),
         element: <PrivetRoute><PlantDetails></PlantDetails></PrivetRoute>
       },
-      // {
-      //   path: 'dashboard',
-      //   Component: Dashboard
-      // }
+      {
+        path: 'aboutUs',
+        Component: AboutUs
+      }
     ]
   },
   {

@@ -1,6 +1,10 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
+@plugin "daisyui" {
+  themes: light --default, retro --prefersdark, halloween;
+}
+
 .active{
     border-bottom: 2px solid green;
 }
