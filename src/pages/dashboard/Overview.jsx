@@ -11,12 +11,12 @@ const Overview = () => {
 
       useEffect(() => {
     // Fetch all plants
-    fetch("http://localhost:3000/plants")
+    fetch("https://plant-care-server-mauve.vercel.app/plants")
       .then((res) => res.json())
       .then((data) => setAllPlants(data));
 
     // Fetch my plants by user email
-    fetch(`http://localhost:3000/plants/my?email=${user?.email}`)
+    fetch(`https://plant-care-server-mauve.vercel.app/plants/my?email=${user?.email}`)
       .then((res) => res.json())
       .then((data) => setMyPlants(data));
   }, [user?.email]);
