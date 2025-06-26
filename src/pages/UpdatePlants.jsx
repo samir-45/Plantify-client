@@ -15,7 +15,7 @@ const UpdatePlants = () => {
         console.log(updatedPlant);
 
         // NOw update data to the database
-        fetch(`https://plant-care-server-mauve.vercel.app/plants/${_id}`, {
+        fetch(`http://localhost:3000/plants/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

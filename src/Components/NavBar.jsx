@@ -4,14 +4,20 @@ import { AuthContext } from '../Contexts/AuthContext';
 
 const NavBar = () => {
 
+const {user, logOut} = use(AuthContext);
+
     const navLink = <>
     <NavLink to='/' className='text-lg text-green-800 font-bold'>Home</NavLink>
     <NavLink to='/allPlants' className='text-lg text-green-800 font-bold'>All Plant</NavLink>
     <NavLink to='/addPlants' className='text-lg text-green-800 font-bold'>Add Plant</NavLink>
     <NavLink to='/myPlants' className='text-lg text-green-800 font-bold'>My Plants</NavLink>
+
+    {
+      user && <NavLink to='/dashboard' className='text-lg text-green-800 font-bold'>Dashboard</NavLink>
+    }
     </>
 
-      const {user, logOut} = use(AuthContext);
+      
 
         const handleLogout = () => {
     logOut()
@@ -48,13 +54,17 @@ const NavBar = () => {
   <div className="navbar-end space-x-3">
 
     {
-      user? <Link onClick={handleLogout} to='/auth/signIn' className='btn px-4 py-3 rounded-full hover:bg-green-800 bg-[#234823] trxt-lg font-bold  text-green-300'>Log Out</Link> : <Link to='/auth/signIn' className='btn px-4 py-3 rounded-full hover:bg-green-800 bg-[#234823] trxt-lg font-bold  text-green-300'>Login</Link>
+      user? <Link onClick={handleLogout} to='/auth/signIn' className='btn px-4 py-3 rounded-full hover:bg-green-800 bg-[#234823] trxt-lg font-bold  text-green-300'>Log Out</Link> : <Link to='/auth/signIn' className='btn px-4 py-3 rounded-full hover:bg-green-800 bg-[#234823] trxt-lg font-bold  text-green-300'>Login</Link> 
+      
+    }
+    {
+      !user && <Link to='/auth/signUp' className='btn px-4 py-3 rounded-full hover:bg-green-800 bg-[#234823] trxt-lg font-bold  text-green-300'>Signup</Link>
     }
 
 {/* <Link to='/auth/signIn' className='btn px-4 py-3 rounded-full hover:bg-green-800 bg-[#234823] trxt-lg font-bold  text-green-300'>Login</Link> */}
 
 
-<Link to='/auth/signUp' className='btn px-4 py-3 rounded-full hover:bg-green-800 bg-[#234823] trxt-lg font-bold  text-green-300'>Signup</Link>
+
 
 <div className="avatar">
   <div className="w-12 rounded-full">

@@ -2,8 +2,8 @@ import React from 'react';
 
 const Faq = () => {
     return (
-        <div className='w-full px-3'>
-                        <h2 className='font-bold text-2xl pb-2 text-green-900'>Frequantly Asked Questions</h2>
+        <div className='w-full py-6 px-3'>
+                        <h2 className='font-bold text-2xl text-green-900'>Frequantly Asked Questions</h2>
             <span className='px-24 border-t-4 border-green-700'></span>
             <div className="collapse collapse-plus bg-base-100 border border-base-300">
   <input type="radio" name="my-accordion-3" defaultChecked />

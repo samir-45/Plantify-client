@@ -19,6 +19,8 @@ import PlantDetails from './pages/PlantDetails.jsx';
 import AllPlants from './pages/AllPlants.jsx';
 import AuthProvider from './Contexts/AuthProvider.jsx';
 import PrivetRoute from './provider/PrivetRoute.jsx';
+import Dashboard from './pages/dashboard/Dashboard.jsx';
+import DashboardLayout from './pages/dashboard/DashboardLayout.jsx';
 
 const router = createBrowserRouter([
   {
@@ -39,19 +41,23 @@ const router = createBrowserRouter([
       },
       {
         path: 'updatePlants/:id',
-        loader: ({params}) => fetch(`https://plant-care-server-mauve.vercel.app/plants/${params.id}`),
+        loader: ({params}) => fetch(`http://localhost:3000/plants/${params.id}`),
         element: <UpdatePlants></UpdatePlants>
       },
       {
         path: 'allPlants',
-        loader: () => fetch('https://plant-care-server-mauve.vercel.app/plants'),
+        loader: () => fetch('http://localhost:3000/plants'),
         Component: AllPlants
       },
       {
         path: 'plantDetails/:id',
-        loader: ({params}) => fetch(`https://plant-care-server-mauve.vercel.app/plants/${params.id}`),
+        loader: ({params}) => fetch(`http://localhost:3000/plants/${params.id}`),
         element: <PrivetRoute><PlantDetails></PlantDetails></PrivetRoute>
-      }
+      },
+      // {
+      //   path: 'dashboard',
+      //   Component: Dashboard
+      // }
     ]
   },
   {
@@ -65,6 +71,29 @@ const router = createBrowserRouter([
       {
         path: '/auth/signUp',
         Component: Signup
+      }
+    ]
+  },
+  {
+    path: '/dashboard',
+    Component: DashboardLayout,
+    children: [
+      {
+        index: true,
+        Component: Dashboard
+      },
+      {
+        path: '/dashboard/myPlants',
+        Component: MyPlants
+      },
+      {
+        path: '/dashboard/addPlants',
+        Component: AddPlants
+      },
+      {
+        path: '/dashboard/allPlants',
+        loader: () => fetch('http://localhost:3000/plants'),
+        Component: AllPlants
       }
     ]
   },

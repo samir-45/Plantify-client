@@ -3,6 +3,8 @@ import PaginationSwiper from '../Components/PaginationSwiper';
 import Services from '../Components/Services';
 import NewPlants from '../Components/NewPlants';
 import Faq from '../Components/Faq';
+import Newsletter from '../Components/Newsletter';
+import Subscription from '../Components/Subscription';
 
 const Home = () => {
     return (
@@ -14,9 +16,13 @@ const Home = () => {
                 <Services></Services>
             </div>
             <div>
-            
-                    <NewPlants></NewPlants>
-               
+                <NewPlants></NewPlants>
+            </div>
+            <div>
+                <Newsletter></Newsletter>
+            </div>
+            <div>
+                <Subscription></Subscription>
             </div>
             <div>
                 <Faq></Faq>

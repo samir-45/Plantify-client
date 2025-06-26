@@ -11,7 +11,7 @@ const AddPlants = () => {
 
 
     // Now send coffee data to the database
-    fetch('https://plant-care-server-mauve.vercel.app/plants', {
+    fetch('http://localhost:3000/plants', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'
